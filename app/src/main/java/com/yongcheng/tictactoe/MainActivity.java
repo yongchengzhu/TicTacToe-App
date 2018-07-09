@@ -64,19 +64,22 @@ public class MainActivity extends AppCompatActivity
 
             // Check tie.
             boolean tie = true;
-            for (int i : game_state)
+            if (!game_over)
             {
-                if (i == 2)
+                for (int i : game_state)
                 {
-                    tie = false;
-                    break;
+                    if (i == 2)
+                    {
+                        tie = false;
+                        break;
+                    }
                 }
-            }
 
-            if (tie)
-            {
-                Toast.makeText(this, "Tie!", Toast.LENGTH_SHORT).show();
-                game_over = true;
+                if (tie)
+                {
+                    Toast.makeText(this, "Tie!", Toast.LENGTH_SHORT).show();
+                    game_over = true;
+                }
             }
         }
 
